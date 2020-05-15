@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import {Icon} from 'semantic-ui-react'
+import React, { Component } from "react";
+import { Link, withRouter } from "react-router-dom";
+import { Icon } from "semantic-ui-react";
 
 class Landing extends Component {
   logOut(e) {
-    e.preventDefault()
-    localStorage.removeItem('usertoken')
+    e.preventDefault();
+    localStorage.removeItem("usertoken");
     alert("you have successfully logged out !!");
-    this.props.history.push(`/`)
+    this.props.history.push(`/`);
   }
 
   render() {
@@ -24,7 +24,7 @@ class Landing extends Component {
           </Link>
         </li>
       </ul>
-    )
+    );
 
     const userLink = (
       <ul className="navbar-nav">
@@ -35,14 +35,17 @@ class Landing extends Component {
         </li>
         <li className="nav-item">
           <a href="/" onClick={this.logOut.bind(this)} className="nav-link">
-          <h4>Logout<Icon name="sign out"/></h4>
+            <h4>
+              Logout
+              <Icon name="sign out" />
+            </h4>
           </a>
         </li>
       </ul>
-    )
+    );
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary rounded">
         <button
           className="navbar-toggler"
           type="button"
@@ -54,16 +57,17 @@ class Landing extends Component {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarsExample10">
+        <div className="collapse navbar-collapse" id="navbarsExample10">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link to="/" className="nav-link">
-              <h4><Icon name="code"/>ChatApp</h4>
+                <h4>
+                  <Icon name="code" />
+                  ChatApp
+                </h4>
               </Link>
             </li>
-          </ul> 
+          </ul>
         </div>
         <div
           className="collapse navbar-collapse justify-content-md-end"
@@ -72,8 +76,8 @@ class Landing extends Component {
           {localStorage.usertoken ? userLink : loginRegLink}
         </div>
       </nav>
-    )
+    );
   }
 }
 
-export default withRouter(Landing)
+export default withRouter(Landing);
