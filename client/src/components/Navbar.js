@@ -45,7 +45,7 @@ class Landing extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary rounded">
+      <nav className="navbar navbar-expand-lg navbar-light bg-secondary rounded">
         <button
           className="navbar-toggler"
           type="button"
