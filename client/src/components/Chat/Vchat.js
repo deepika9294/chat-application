@@ -119,6 +119,7 @@ const Vchat = (props) => {
     }
 
     return (
+        <>
         <Container>
             <StyledVideo muted ref={userVideo} autoPlay playsInline />
             {peers.map((peer, index) => {
@@ -127,6 +128,7 @@ const Vchat = (props) => {
                 );
             })}
         </Container>
+        </>
     );
 };
 
